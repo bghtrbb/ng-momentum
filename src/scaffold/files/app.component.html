@@ -5,12 +5,14 @@
 
 <nav>
   <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+  <!-- Enter other buttons here -->
 </nav>
 <% } else { %>
 <h1 i18n="app header|main app name@@appHeader">Welcome to app!</h1>
 
 <nav>
 	<a routerLink="/home" routerLinkActive="active">Home</a>
+	<!-- Enter other buttons here -->
 </nav>
 <% } %>
 <router-outlet></router-outlet>

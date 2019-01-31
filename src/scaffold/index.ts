@@ -34,6 +34,11 @@ export enum UI_FRAMEWORK_OPTION {
     BOOTSTRAP = 'bootstrap'
 }
 
+export enum BACKEND_API_OPTION {
+    HTTP = 'http',
+    APPSYNC = 'appsync',
+}
+
 export const UI_FRAMEWORK_OPTIONS = [UI_FRAMEWORK_OPTION.BASIC, UI_FRAMEWORK_OPTION.MATERIAL, UI_FRAMEWORK_OPTION.BOOTSTRAP];
 
 function addScriptsToPackageJson() {
@@ -183,11 +188,15 @@ export function scaffold(options: ScaffoldOptions): Rule {
 
         const defaultOptions = {
             styleext: getProjectSelectedStyleExt(host, sourcePath),
-            ui: UI_FRAMEWORK_OPTION.MATERIAL.valueOf()
+            ui: UI_FRAMEWORK_OPTION.MATERIAL.valueOf(),
+            backendApiType: BACKEND_API_OPTION.HTTP.valueOf()
         };
 
         if (options.uiFramework && options.uiFramework !== UI_FRAMEWORK_OPTION.MATERIAL) {
             defaultOptions.ui = options.uiFramework;
+        }
+        if (options.backendApiType && options.backendApiType !== UI_FRAMEWORK_OPTION.MATERIAL) {
+            defaultOptions.backendApiType = options.backendApiType;
         }
 
         const templateOptions = {

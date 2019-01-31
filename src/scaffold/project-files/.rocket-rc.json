@@ -1,4 +1,5 @@
 {
   "uiFramework": "<%= uiFramework %>",
-  "style": "<%= styleext %>"
+  "style": "<%= styleext %>",
+  "backendApiType": "<%= backendApiType %>"
 }
